@@ -16,12 +16,12 @@ const data = [
   ];
 
   const list = () => {
-    return [...data] // Notice that we're returning a copy of the array, so the original data is safe. This is called 'immutability'.
+    return [...data]
   }; 
   
   const find = (id) => {
     const post = data.find(post => post.id === +id);
-    return {...post}; // Again, we copy the post data before returning so the original information is safe.
+    return {...post};
   }
   
   module.exports = { list: list, find: find };
