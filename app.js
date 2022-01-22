@@ -7,8 +7,6 @@ const postBank = require("./postBank")
 
 const app = express();
 
-const PORT = 1337;
-
 app.use(morgan('dev'));
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -74,6 +72,8 @@ app.get('/posts/:id', (req, res, next) => {
     res.send(htmlSinglePost);
   }
 });
+
+const {PORT} = process.env;
 
 app.listen(PORT, () => {
   console.log(`App listening in port ${PORT}`);
